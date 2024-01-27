@@ -4,6 +4,27 @@
         <name>libEDSsharp</name>
     </assembly>
     <members>
+        <member name="M:libEDSsharp.CanOpenNodeExporter.getflags(libEDSsharp.ODentry)">
+            <summary>
+            Get the CANopenNode specific flags, these flags are used internally in CANopenNode to determine details about the object variable
+            </summary>
+            <param name="od">An odentry to access</param>
+            <returns>byte containing the flag value</returns>
+        </member>
+        <member name="M:libEDSsharp.CanOpenNodeExporter.export_record_types">
+            <summary>
+            Export the record type objects in the CO_OD.c file
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:libEDSsharp.CanOpenNodeExporter.export_one_record_type(libEDSsharp.ODentry,System.String)">
+            <summary>
+            Exports a sub object line in a record object
+            </summary>
+            <param name="sub">sub ODentry object to export</param>
+            <param name="arrayaccess">string forming current array level or empty string for none</param>
+            <returns>string forming one line of CO_OD.c record objects</returns>
+        </member>
         <member name="T:libEDSsharp.CanOpenNodeExporter_V4">
             <summary>
             Exporter for CanOpenNode_V4
@@ -147,27 +168,6 @@
             <param name="gitVersion">Git version string for documentation field</param>
             <param name="deviceCommissioning">If true, device commisioning, denotations and actual values will be included</param>
             <param name="stripped">If true, then all CANopenNode specific parameters and all disabled objects will be stripped</param>
-        </member>
-        <member name="M:libEDSsharp.CanOpenNodeExporter.getflags(libEDSsharp.ODentry)">
-            <summary>
-            Get the CANopenNode specific flags, these flags are used internally in CANopenNode to determine details about the object variable
-            </summary>
-            <param name="od">An odentry to access</param>
-            <returns>byte containing the flag value</returns>
-        </member>
-        <member name="M:libEDSsharp.CanOpenNodeExporter.export_record_types">
-            <summary>
-            Export the record type objects in the CO_OD.c file
-            </summary>
-            <returns>string</returns>
-        </member>
-        <member name="M:libEDSsharp.CanOpenNodeExporter.export_one_record_type(libEDSsharp.ODentry,System.String)">
-            <summary>
-            Exports a sub object line in a record object
-            </summary>
-            <param name="sub">sub ODentry object to export</param>
-            <param name="arrayaccess">string forming current array level or empty string for none</param>
-            <returns>string forming one line of CO_OD.c record objects</returns>
         </member>
         <member name="T:libEDSsharp.CustomProperties">
             <summary>
