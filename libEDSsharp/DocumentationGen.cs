@@ -217,6 +217,7 @@ Device Information
 
 
             int chapter = 0;
+        
             foreach (ODentry od in eds.ods.Values)
             {
                 file.WriteLine("\\newpage");
@@ -371,7 +372,9 @@ Device Information
             var description = od.Description;
             if (description == null || description == "")
                 description = "*Not defined*";
-
+            else
+                description = description.Replace("\n", "  \n");
+                
             file.WriteLine(string.Format(@"
 ## {0} [0x{1:X4}]
 **Description**  
